@@ -19,3 +19,5 @@ The optimizations for the pizzeria page, documented in the main.js file in the s
 <li><em>document.getElementById("randomPizzas")</em> is also evaluated and stored in a variable outside of the <em>for</em> loop that appends the random pizzas when the page loads (affects load time)</li>
 <li>(<em>document.body.scrollTop</em> / 125) calculation moved outside the <em>for</em> loop in the <b>updatePositions</b> function (affects scrolling fps)</li>
 <li><em>document.getElementsByClassName("mover")</em> is evaluated in the DOMContentLoaded function right after the sliding pizzas are created, and stored in a variable (items) scoped to the whole main.js for use in <b>updatePositions</b> instead of being evaluated each time scrolling triggers a call</ul></ul>
+
+P.S. I decided not to use the paint optimization hacks, since the potential cost on mobile performance I think outweighs the potential gain, given that the fps is already high outside of a few spikes for fast scrolling or changing scrolling direction and a mobile user would have to do a lot more scrolling with fewer pizzas appearing across the screen.
